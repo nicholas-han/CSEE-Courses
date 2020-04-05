@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <div class="form-group">
+        <table>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Price</th>
+            </tr>
+            <tr>
+                <td>{{ symbols.symbol }}</td>
+                <td>{{ symbols.name }}</td>
+                <td>{{ symbols.price }}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

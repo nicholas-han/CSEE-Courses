@@ -1,0 +1,11 @@
+h3 {
+    text-align: center;
+}
+
+h4 {
+    padding: 10px;
+}
+
+.form-radio-input, .form-radio-label {
+    padding: 5px;
+}
