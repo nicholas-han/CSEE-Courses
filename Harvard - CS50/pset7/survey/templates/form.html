@@ -1,0 +1,113 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <h3 class="mb-3">Are You Prepared to Be a Quant?</h3>
+
+    <h4>Personal Information</h4>
+    <form class="needs-validation" action="/form" method="post" novalidate>
+        <div class="form-group">
+            <label for="name"><span style="color: red">*</span>Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name" required>
+            <div class="invalid-feedback">You must provide your name.</div>
+        </div>
+        <div class="form-group">
+            <label for="email"><span style="color: red">*</span>Email</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+            <div class="invalid-feedback">You must provide your email.</div>
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="educationSelect"><span style="color: red">*</span>Education</label>
+            <select class="form-control" id="educationSelect" name="education" required>
+                <option value="" selected disabled>Education Level</option>
+                <option value="Below HS">Below High School</option>
+                <option value="High school">High School</option>
+                <option value="Bachelor">Bachelor's</option>
+                <option value="Master">Master's</option>
+                <option value="Doctor">PhD, MD, JD</option>
+            </select>
+            <div class="invalid-feedback">You must select your education level.</div>
+        </div>
+        <div class="form-group">
+            <label class="form-file-label" for="fileResume">Resume</label><br>
+            <input type="file" class="form-file-input" id="fileResume" name="resume">
+        </div>
+        <h4>Academic Background</h4>
+        <div class="form-group">
+            <label><span style="color: red">*</span>What is your proficiency level in <b>probability</b>?</label>
+            <select class="form-control" id="probSelect" name="prob" required>
+                <option value="" selected disabled>Proficiency</option>
+                <option value="Advanced">Advanced</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Basic">Basic</option>
+                <option value="No Experience">No Experience</option>
+            </select>
+            <div class="invalid-feedback">You must select your proficiency level.</div>
+        </div>
+        <div class="form-group">
+            <label><span style="color: red">*</span>What is your proficiency level in <b>C++</b>?</label>
+            <select class="form-control" id="probSelect" name="cpp" required>
+                <option value="" selected disabled>Proficiency Level</option>
+                <option value="Advanced">Advanced</option>
+                <option value="Intermediate">Intermediate</option>
+                <option value="Basic">Basic</option>
+                <option value="No Experience">No Experience</option>
+            </select>
+            <div class="invalid-feedback">You must select your proficiency level.</div>
+        </div>
+        <div class="form-group">
+            <label>What other programming languages do you know?</label><br>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="Python" id="coding1">
+                <label class="form-check-label" for="coding1">Python</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="R" id="coding2">
+                <label class="form-check-label" for="coding2">R</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="MATLAB" id="coding3">
+                <label class="form-check-label" for="coding3">MATLAB</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="SQL" id="coding4">
+                <label class="form-check-label" for="coding4">SQL</label>
+            </div>
+        </div>
+        <h4>Acknowledgement</h4>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="agreementCheck" name="consent" required>
+            <label class="form-check-label" for="agreementCheck"><span style="color: red">*</span>I agree to share the above information.</label>
+            <div class="invalid-feedback">You must agree to share your info before submission.</div>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="subscriptionCheck" name="subscription">
+            <label class="form-check-label" for="subscriptionCheck">Send me emails regarding quant preparation tips.</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <script>
+
+        (function() {
+          'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+
+    </script>
+
+{% endblock %}

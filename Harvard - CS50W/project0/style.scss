@@ -1,0 +1,57 @@
+$bgSmallColor: lightgreen;
+$bgLargeColor: lightblue;
+
+p {
+    font-family: Arial, sans-serif;
+}
+
+table, th, tr, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+}
+
+ol {
+    li {
+        color: orange;
+    }
+
+    ul {
+        li {
+            color: red;
+        }
+    }
+}
+
+.title {
+    font-weight: bold;
+    font-size: 40px;
+    color: blue;
+    text-align: center;
+}
+
+.body {
+    padding: 30px;
+}
+
+#bioText {
+    color: red;
+}
+
+.layout {
+    @extend .body;
+    text-align: center;
+}
+
+@media only screen and (min-width: 800px) {
+  body {
+    background-color: $bgLargeColor;
+  }
+}
+
+@media only screen and (max-width: 799px) {
+  body {
+    background-color: $bgSmallColor;
+  }
+}

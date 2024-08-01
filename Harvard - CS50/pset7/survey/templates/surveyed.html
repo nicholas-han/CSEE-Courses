@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Education</th>
+                <th scope="col">Resume</th>
+                <th scope="col">Probability</th>
+                <th scope="col">C++</th>
+                <th scope="col">Languages</th>
+                <th scope="col">Subscription</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for line in info %}
+                <tr>
+                    <th scope="row">{{line[0]}}</th>
+                    <td>{{line[1]}}</td>
+                    <td>{{line[2]}}</td>
+                    <td>{{line[3]}}</td>
+                    <td>{{line[4]}}</td>
+                    <td>{{line[5]}}</td>
+                    <td>{{line[6]}}</td>
+                    <td>{{line[7]}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
